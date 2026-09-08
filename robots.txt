@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://dawnpressco.com/sitemap.xml
