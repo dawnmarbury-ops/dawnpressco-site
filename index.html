@@ -4,39 +4,530 @@
   <meta name="p:domain_verify" content="fedcef61f364e7a8c5d9a10ff9a56f0b"/>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dawn Press Co</title>
-<meta name="description" content="Dawn Press Co — a small Black-owned Ohio shop. Planners, trackers, and wall art for people building the life quietly.">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap">
+<title>Dawn Press Co — Beautiful, useful paper goods</title>
+<meta name="description" content="Dawn Press Co is a one-woman shop pressing beautiful, useful paper goods: planners, trackers, and wall art. Dawn means new beginnings.">
+<meta property="og:title" content="Dawn Press Co">
+<meta property="og:description" content="Beautiful, useful paper goods: planners, trackers, and wall art from a one-woman shop.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23171310'/%3E%3Cpath d='M8 20a8 8 0 0 1 16 0' fill='%23D3A84C'/%3E%3Crect x='6' y='20' width='20' height='2' rx='1' fill='%23F3EAD9'/%3E%3C/svg%3E">
+
+<script>
+/* ════════════════════════════════════════════════════════════════════
+   LAUNCH WIRING — the only two lines to touch on launch day.
+   1. ETSY_URL       → the real Etsy shop address, once the shop opens.
+   2. BEEHIIV_ACTION → the real Beehiiv form action, once the account
+                       exists. Values starting with "#" are placeholders:
+                       Etsy buttons stay put and the email form answers
+                       with a friendly note instead of posting.
+   ════════════════════════════════════════════════════════════════════ */
+const ETSY_URL = "https://thedawnpressco.etsy.com";
+const BEEHIIV_ACTION = "https://dawnpressco.beehiiv.com/create";
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,500&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
 <style>
-  :root { --bg:#1e1813; --ink:#F3EAD9; --muted:#CDBFA6; --gold:#D3A84C; }
-  * { box-sizing:border-box; margin:0; padding:0; }
-  body { background:var(--bg); color:var(--ink); font-family:Lato,"Helvetica Neue",Arial,sans-serif; min-height:100vh; display:flex; flex-direction:column; }
-  main { flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:64px 24px; gap:22px; }
-  .kicker { font-size:14px; letter-spacing:.34em; color:var(--gold); text-transform:uppercase; }
-  h1 { font-family:"Playfair Display",Georgia,serif; font-weight:700; font-size:clamp(44px,8vw,96px); line-height:1.02; letter-spacing:-.01em; }
-  p.lede { font-size:clamp(18px,2.4vw,24px); line-height:1.5; color:var(--muted); max-width:640px; }
-  .rule { width:72px; height:2px; background:var(--gold); margin:8px auto; }
-  .actions { display:flex; gap:16px; flex-wrap:wrap; justify-content:center; margin-top:12px; }
-  a.btn { display:inline-block; padding:16px 28px; border:1px solid var(--gold); border-radius:999px; color:var(--ink); text-decoration:none; font-weight:700; letter-spacing:.06em; font-size:16px; min-height:44px; }
-  a.btn.primary { background:var(--gold); color:#1e1813; }
-  a.btn:hover { border-color:var(--ink); }
-  footer { padding:24px; text-align:center; color:var(--muted); font-size:14px; letter-spacing:.08em; }
-  footer a { color:var(--muted); }
+/* ── Tokens ─────────────────────────────────────────────────────── */
+:root{
+  --night:#171310;          /* warm espresso ground */
+  --night-2:#1e1813;        /* raised ground */
+  --frame:#0f0c09;          /* frame wood */
+  --cream:#F3EAD9;          /* primary ink */
+  --cream-dim:#CDBFA6;      /* secondary ink, tinted never gray */
+  --gold:#D3A84C;           /* the one accent: action, identity */
+  --gold-soft:#E2C27C;
+  --evergreen:#1E4033;      /* the press-room field */
+  --evergreen-2:#183429;
+  --green-ink:#EDF3EA;
+  --green-dim:#AFC9B4;
+  --card:rgba(243,234,217,0.045);
+  --card-line:rgba(211,168,76,0.22);
+  --hairline:rgba(243,234,217,0.12);
+  --serif:"Playfair Display",Georgia,"Times New Roman",serif;
+  --sans:"Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  background:var(--night);
+  color:var(--cream);
+  font-family:var(--sans);
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+/* dawn atmosphere — fixed, faint, behind everything */
+.sky{
+  position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(90% 55% at 50% -10%, rgba(211,168,76,0.13) 0%, rgba(211,168,76,0.045) 45%, transparent 70%),
+    radial-gradient(70% 50% at 85% 105%, rgba(30,64,51,0.35) 0%, transparent 65%),
+    var(--night);
+}
+::selection{background:var(--gold);color:var(--night)}
+a{color:var(--gold-soft)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
+img{max-width:100%;height:auto;display:block}
+
+/* ── Shell ──────────────────────────────────────────────────────── */
+.bar{
+  position:sticky;top:0;z-index:50;
+  background:rgba(23,19,16,0.78);
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--hairline);
+}
+.bar-in{
+  max-width:1120px;margin:0 auto;padding:0.7rem 1.4rem;
+  display:flex;align-items:center;gap:1.2rem;
+}
+.brand{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:var(--cream);min-height:44px}
+.brand svg{display:block}
+.brand b{font-family:var(--serif);font-weight:600;font-size:1.18rem;letter-spacing:0.01em;white-space:nowrap}
+.bar nav{margin-left:auto;display:flex;align-items:center;gap:0.25rem}
+.bar nav a.tab{
+  text-decoration:none;color:var(--cream-dim);font-size:0.92rem;font-weight:700;
+  padding:0.5rem 0.85rem;border-radius:999px;transition:color .15s,background .15s;
+  display:inline-flex;align-items:center;min-height:38px;
+}
+.bar nav a.tab:hover{color:var(--cream);background:rgba(243,234,217,0.07)}
+.pill{
+  display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;
+  background:var(--gold);color:#241a0c;text-decoration:none;
+  font-weight:700;font-size:0.95rem;letter-spacing:0.01em;
+  padding:0.62rem 1.25rem;border-radius:999px;border:0;cursor:pointer;
+  min-height:44px;
+  box-shadow:0 8px 20px -10px rgba(0,0,0,0.6);
+  transition:background .15s,transform .15s,box-shadow .15s;
+}
+.pill:hover{background:var(--gold-soft);transform:translateY(-1px);box-shadow:0 12px 24px -10px rgba(0,0,0,0.65)}
+.pill:active{transform:translateY(0)}
+.ghost{
+  display:inline-flex;align-items:center;justify-content:center;
+  color:var(--cream);text-decoration:none;font-weight:700;font-size:0.95rem;
+  padding:0.62rem 1.25rem;border-radius:999px;min-height:44px;
+  border:1px solid rgba(243,234,217,0.28);
+  transition:border-color .15s,background .15s;
+}
+.ghost:hover{border-color:var(--gold);background:rgba(211,168,76,0.08)}
+
+main{max-width:1120px;margin:0 auto;padding:0 1.4rem}
+section{scroll-margin-top:5rem}
+
+/* ── Hero ───────────────────────────────────────────────────────── */
+.hero{
+  display:grid;grid-template-columns:1.05fr 0.95fr;gap:3.5rem;align-items:center;
+  padding:4.5rem 0 5rem;
+}
+.hero h1{
+  font-family:var(--serif);font-weight:600;
+  font-size:clamp(2.5rem,5.2vw,4.1rem);
+  line-height:1.08;letter-spacing:-0.01em;
+  text-wrap:balance;
+}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--gold-soft)}
+.hero .story{
+  margin-top:1.4rem;max-width:54ch;color:var(--cream-dim);font-size:1.06rem;
+}
+.hero .story strong{color:var(--cream);font-weight:700}
+.cta-row{margin-top:2.1rem;display:flex;gap:0.9rem;flex-wrap:wrap;align-items:center}
+.cta-note{margin-top:0.9rem;font-size:0.85rem;color:var(--cream-dim)}
+
+/* framed print treatment — the brand's own mockup language */
+.print{
+  background:var(--frame);
+  border:1px solid rgba(211,168,76,0.5);
+  padding:11px;border-radius:4px;
+  box-shadow:0 24px 48px -18px rgba(0,0,0,0.65), 0 4px 14px rgba(0,0,0,0.4);
+}
+.print .mat{background:#FCF8F0;padding:10px;border-radius:1px;border:2px solid #B18A44}
+.print img{border-radius:1px}
+.plate{
+  margin-top:0.85rem;text-align:center;
+  font-family:var(--serif);font-style:italic;font-size:0.98rem;color:var(--cream-dim);
+}
+.hero-art{transform:rotate(0.4deg)}
+
+/* ── Section headings ───────────────────────────────────────────── */
+.head{padding:1.5rem 0 0}
+.head h2{
+  font-family:var(--serif);font-weight:600;font-size:clamp(1.9rem,3.4vw,2.7rem);
+  letter-spacing:-0.01em;text-wrap:balance;
+}
+.head p{margin-top:1.1rem;max-width:62ch;color:var(--cream-dim)}
+
+/* ── Feature: Afrohemian ────────────────────────────────────────── */
+.feature{
+  display:grid;grid-template-columns:0.95fr 1.05fr;gap:3rem;align-items:center;
+  margin-top:2.8rem;
+  background:var(--card);
+  border:1px solid var(--hairline);
+  border-radius:18px;
+  padding:2.4rem;
+}
+.feature h3{font-family:var(--serif);font-weight:600;font-size:1.75rem;line-height:1.2}
+.feature p{margin-top:0.9rem;color:var(--cream-dim);max-width:52ch}
+.feature .more{margin-top:1.5rem;display:inline-flex;align-items:center;gap:0.4rem;font-weight:700;font-size:0.95rem;color:var(--gold-soft);text-decoration:none;min-height:44px}
+.feature .more:hover{color:var(--gold)}
+
+/* ── The shelf ──────────────────────────────────────────────────── */
+.shelf-wrap{margin-top:2.6rem;position:relative}
+.shelf{
+  display:flex;gap:1.4rem;overflow-x:auto;padding:0.4rem 0.2rem 1.4rem;
+  scroll-snap-type:x proximity;
+  scrollbar-width:thin;scrollbar-color:var(--gold) rgba(243,234,217,0.08);
+}
+.shelf::-webkit-scrollbar{height:8px}
+.shelf::-webkit-scrollbar-track{background:rgba(243,234,217,0.08);border-radius:99px}
+.shelf::-webkit-scrollbar-thumb{background:var(--gold);border-radius:99px}
+.piece{
+  flex:0 0 316px;scroll-snap-align:start;
+  background:var(--card);border:1px solid var(--hairline);border-radius:14px;
+  padding:1.1rem;
+  transition:transform .18s,border-color .18s;
+}
+.piece:nth-child(even){flex-basis:276px;margin-top:1.3rem}
+.piece:hover{transform:translateY(-4px);border-color:var(--card-line)}
+.piece img{border-radius:8px;border:1px solid rgba(243,234,217,0.08)}
+.piece h3{font-family:var(--serif);font-weight:600;font-size:1.22rem;margin-top:0.95rem;line-height:1.25}
+.piece p{margin-top:0.4rem;font-size:0.92rem;color:var(--cream-dim);line-height:1.5}
+.shelf-note{font-size:0.9rem;color:var(--cream-dim);margin-top:0.4rem}
+.shelf-note b{color:var(--cream)}
+
+/* ── The maker ──────────────────────────────────────────────────── */
+.maker{
+  display:grid;grid-template-columns:0.8fr 1.2fr;gap:3.5rem;align-items:center;
+  padding:5rem 0;
+}
+.maker-art{max-width:360px;transform:rotate(-0.4deg)}
+.maker h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.9rem,3.4vw,2.6rem);letter-spacing:-0.01em;margin-bottom:1.1rem}
+.maker p{color:var(--cream-dim);max-width:58ch;margin-top:1rem}
+.maker p.lead{color:var(--cream);font-size:1.08rem;margin-top:0}
+.honest{
+  margin-top:1.6rem;padding:1.1rem 1.3rem;
+  background:var(--card);border:1px solid var(--hairline);border-radius:12px;
+  font-family:var(--serif);font-style:italic;font-size:1.02rem;color:var(--cream);
+  max-width:56ch;line-height:1.55;
+}
+
+/* ── First look ─────────────────────────────────────────────────── */
+.firstlook{
+  background:linear-gradient(155deg,var(--evergreen) 0%,var(--evergreen-2) 100%);
+  border:1px solid rgba(211,168,76,0.28);
+  border-radius:20px;
+  padding:3.6rem 3rem;
+  margin:1rem 0 0;
+  color:var(--green-ink);
+  display:grid;grid-template-columns:1.1fr 0.9fr;gap:3rem;align-items:center;
+}
+.firstlook h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.9rem,3.2vw,2.5rem);letter-spacing:-0.01em;text-wrap:balance}
+.firstlook .sub{margin-top:1rem;color:var(--green-dim);max-width:48ch}
+.firstlook form{display:flex;gap:0.7rem;flex-wrap:wrap}
+.firstlook input[type=email]{
+  flex:1 1 240px;min-height:48px;padding:0 1.1rem;
+  border-radius:999px;border:1px solid rgba(237,243,234,0.3);
+  background:rgba(23,19,16,0.35);color:var(--green-ink);
+  font-family:var(--sans);font-size:1rem;
+  transition:border-color .15s;
+}
+.firstlook input[type=email]::placeholder{color:var(--green-dim)}
+.firstlook input[type=email]:focus{border-color:var(--gold);outline:none}
+.firstlook input[type=email]{caret-color:var(--gold)}
+.firstlook .fine{margin-top:0.9rem;font-size:0.85rem;color:var(--green-dim)}
+.form-note{
+  display:none;margin-top:0.9rem;font-size:0.95rem;color:var(--gold-soft);font-weight:700;
+}
+.form-note.show{display:block}
+
+/* ── Closing + footer ───────────────────────────────────────────── */
+.close{
+  text-align:center;padding:5.5rem 0 4.5rem;
+}
+.close h2{
+  font-family:var(--serif);font-weight:600;
+  font-size:clamp(2rem,4vw,3rem);letter-spacing:-0.01em;text-wrap:balance;
+}
+.close h2 em{font-style:italic;font-weight:500;color:var(--gold-soft)}
+.close .cta-row{justify-content:center}
+footer{border-top:1px solid var(--hairline)}
+.foot-in{
+  max-width:1120px;margin:0 auto;padding:2.4rem 1.4rem 3rem;
+  display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;
+}
+.foot-mark{display:flex;align-items:center;gap:0.6rem}
+.foot-mark b{font-family:var(--serif);font-weight:600;font-size:1.05rem}
+.foot-in .where{color:var(--cream-dim);font-size:0.92rem}
+.foot-in .links{margin-left:auto;display:flex;gap:1.4rem;flex-wrap:wrap}
+.foot-in .links a{color:var(--cream-dim);text-decoration:none;font-size:0.92rem;font-weight:700;min-height:44px;display:inline-flex;align-items:center}
+.foot-in .links a:hover{color:var(--gold-soft)}
+
+/* ── Motion: one authored arrival ───────────────────────────────── */
+@media (prefers-reduced-motion:no-preference){
+  .rise{opacity:0;transform:translateY(14px);animation:rise .7s cubic-bezier(.16,1,.3,1) forwards}
+  .rise.d1{animation-delay:.08s}.rise.d2{animation-delay:.16s}.rise.d3{animation-delay:.24s}
+  @keyframes rise{to{opacity:1;transform:translateY(0)}}
+  .sun{transform:translateY(5px);animation:sunrise 1.1s cubic-bezier(.16,1,.3,1) .15s both}
+  @keyframes sunrise{from{transform:translateY(7px)}to{transform:translateY(0)}}
+}
+
+/* ── Responsive ─────────────────────────────────────────────────── */
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;gap:2.8rem;padding:3rem 0 3.5rem}
+  .hero-art{max-width:440px;margin:0 auto}
+  .feature{grid-template-columns:1fr;gap:1.8rem;padding:1.4rem}
+  .maker{grid-template-columns:1fr;gap:2.5rem;padding:3.5rem 0}
+  .maker-art{margin:0 auto}
+  .firstlook{grid-template-columns:1fr;gap:1.8rem;padding:2.2rem 1.5rem}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .bar nav a.tab{display:none}
+  .bar-in{padding:0.6rem 1rem}
+  main{padding:0 1rem}
+  .piece{flex-basis:264px}
+  .piece:nth-child(even){flex-basis:244px;margin-top:1rem}
+  .foot-in{gap:0.8rem}
+  .foot-in .links{margin-left:0}
+}
 </style>
 </head>
 <body>
-<main>
-  <div class="kicker">A small Black-owned Ohio shop</div>
-  <h1>Dawn Press Co</h1>
-  <div class="rule"></div>
-  <p class="lede">Planners, trackers, and wall art for people building the life quietly. Budgets that work. Walls that feel like home.</p>
-  <p class="lede">The shop is open. First looks and free pages go to the list.</p>
-  <div class="actions">
-    <a class="btn primary" href="https://thedawnpressco.etsy.com/">Shop on Etsy</a>
-    <a class="btn" href="https://dawnpressco.beehiiv.com/">Join the list</a>
-    <a class="btn" href="mailto:hello@dawnpressco.com">hello@dawnpressco.com</a>
+<!--
+THESIS: Dawn Press Co's own listing art is the proof — hang it like a gallery
+wall at first light, refuse the cream-template printable-shop page.
+OWN-WORLD: warm espresso near-black, cream ink, one champagne-gold accent
+carrying action and identity; gilt-framed prints on the dark wall; deep
+evergreen as the single secondary field; Playfair Display ceremony over Lato
+utility — the product line's own faces.
+STORY: a visitor sees real finished work framed, learns it's one woman in
+Ohio pressing honest paper goods, and either walks into the Etsy shop or
+leaves an email for the first look.
+FIRST VIEWPORT: glass app bar; left, the serif thesis + story + gold Etsy
+pill; right, the Afrohemian room scene as a framed print with a caption
+plate; a faint dawn glow rises behind everything.
+FORM: gallery wall at dawn — from the brand's own mockup language; brief-
+pinned direction, headless run, no seed roll.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the
+finish review, the verdict, DESIGN.md, and every shipping raster carrying
+its provenance.
+-->
+<div class="sky" aria-hidden="true"></div>
+
+<header class="bar">
+  <div class="bar-in">
+    <a class="brand" href="#top" aria-label="Dawn Press Co — home">
+      <svg class="mark" width="30" height="30" viewBox="0 0 32 32" aria-hidden="true">
+        <clipPath id="horizon"><rect x="0" y="0" width="32" height="21"/></clipPath>
+        <path class="sun" d="M8 21a8 8 0 0 1 16 0" fill="#D3A84C" clip-path="url(#horizon)"/>
+        <rect x="4" y="21" width="24" height="1.8" rx="0.9" fill="#F3EAD9"/>
+      </svg>
+      <b>Dawn Press Co</b>
+    </a>
+    <nav aria-label="Site">
+      <a class="tab" href="#collection">The collection</a>
+      <a class="tab" href="#maker">The maker</a>
+      <a class="tab" href="#firstlook">First look</a>
+      <a class="pill" href="#etsy-url-placeholder" data-etsy>Shop on Etsy</a>
+    </nav>
   </div>
+</header>
+
+<main id="top">
+
+  <!-- ── Hero ── -->
+  <section class="hero">
+    <div>
+      <h1 class="rise">New beginnings, <em>pressed on paper.</em></h1>
+      <p class="story rise d1">
+        <strong>Dawn Press Co</strong> is a one-woman shop making beautiful,
+        useful paper goods: planners that run your season, trackers that keep your
+        money honest, and wall art that finally looks like home.
+      </p>
+      <div class="cta-row rise d2">
+        <a class="pill" href="#etsy-url-placeholder" data-etsy>Shop on Etsy</a>
+        <a class="ghost" href="#firstlook">Get the first look</a>
+      </div>
+      <p class="cta-note rise d3">Instant downloads. Print at home, keep forever.</p>
+    </div>
+    <figure class="hero-art rise d2">
+      <div class="print">
+        <img src="assets/af-room.webp" width="1400" height="1400"
+             alt="Three gold-framed Afrohemian art prints of Black women and mudcloth patterns above a cream sofa on a terracotta wall" fetchpriority="high">
+      </div>
+      <figcaption class="plate">The Afrohemian Collection, hung and at home.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ── The collection ── -->
+  <section id="collection" class="head">
+    <h2>Off the press, onto your wall.</h2>
+    <p>
+      Every piece starts as a blank page and leaves as something you'll actually use:
+      designed, written, and finished by hand, then delivered as a download the moment
+      you want it.
+    </p>
+
+    <article class="feature">
+      <div class="print">
+        <img src="assets/af-hero.webp" width="1100" height="1100" loading="lazy"
+             alt="Afrohemian wall art set of three: gold-framed prints of Black women in headwraps and a patterned vase with protea and monstera">
+      </div>
+      <div>
+        <h3>The Afrohemian Collection</h3>
+        <p>
+          The flagship of the press: Afro-bohemian wall art. Cowrie shells, gele
+          wraps, mudcloth blues, protea blooms, drawn warm and dignified, sized
+          for the frames you already own. A gallery wall, ready the same day you
+          find the nail.
+        </p>
+        <a class="more" href="#etsy-url-placeholder" data-etsy>See the collection in the shop
+          <svg width="18" height="12" viewBox="0 0 18 12" fill="none" aria-hidden="true"><path d="M1 6h15M12 1.5 16.5 6 12 10.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </article>
+
+    <div class="shelf-wrap">
+      <div class="shelf" role="list" aria-label="The paper goods line">
+        <article class="piece" role="listitem">
+          <img src="assets/christmas.webp" width="900" height="900" loading="lazy" alt="Christmas Planner cover in deep evergreen with gold serif type, fanned over budget pages">
+          <h3>The Christmas Planner</h3>
+          <p>You run Christmas this year: budget, gifts, menus, and the calm to enjoy it, in forty pages.</p>
+        </article>
+        <article class="piece" role="listitem">
+          <img src="assets/savings.webp" width="900" height="900" loading="lazy" alt="2027 Savings Pack cover in evergreen with gold 2027, cash challenge sheets fanned behind">
+          <h3>The 2027 Savings Pack</h3>
+          <p>Cash-envelope challenges and paycheck sheets. The year the money finally has somewhere to go.</p>
+        </article>
+        <article class="piece" role="listitem">
+          <img src="assets/hosting.webp" width="900" height="900" loading="lazy" alt="Holiday Hosting Kit cover in warm neutrals, with menu and timeline pages">
+          <h3>The Holiday Hosting Kit</h3>
+          <p>Thanksgiving through New Year's: menus, timelines, and every dish landing hot at the same time.</p>
+        </article>
+        <article class="piece" role="listitem">
+          <img src="assets/elf.webp" width="900" height="900" loading="lazy" alt="Elf Ideas Calendar kit cover with red, blush, and sage holiday palette">
+          <h3>The Elf Ideas Calendar</h3>
+          <p>A whole December of elf scenes planned in one cup of cocoa, prep notes included.</p>
+        </article>
+        <article class="piece" role="listitem">
+          <img src="assets/debt.webp" width="900" height="900" loading="lazy" alt="Debt Payoff Tracker cover in evergreen and gold, with progress pages fanned behind">
+          <h3>The Debt Payoff Tracker</h3>
+          <p>Honest columns, visible progress. Watch the balance fall month after month.</p>
+        </article>
+      </div>
+      <p class="shelf-note"><b>All instant downloads.</b> Undated on purpose: print fresh pages every year, forever.</p>
+    </div>
+  </section>
+
+  <!-- ── The maker ── -->
+  <section id="maker" class="maker">
+    <figure class="maker-art">
+      <div class="print">
+        <img src="assets/af-hallway.webp" width="1100" height="1100" loading="lazy"
+             alt="Two Afrohemian portrait prints in gold frames along a warm hallway wall">
+      </div>
+      <figcaption class="plate">Portrait pieces, hallway run.</figcaption>
+    </figure>
+    <div>
+      <h2>One woman. One press.</h2>
+      <p class="lead">
+        Dawn Press Co is exactly what it sounds like: one woman, pressing
+        paper goods she'd be proud to hang in her own hallway and keep on her own desk.
+      </p>
+      <p>
+        The name is the promise. Dawn means new beginnings: a season you decide to
+        run, a number you decide to hit, a wall that finally gets its art. Every piece
+        here exists to make the new start feel beautiful and doable on the same day.
+      </p>
+      <blockquote class="honest">
+        Designed and written by me — a real one-woman shop. I use AI-assisted design
+        tools in production, and I personally review and finish every page before it
+        reaches you.
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ── First look ── -->
+  <section id="firstlook" class="firstlook">
+    <div>
+      <h2>Be first through the door.</h2>
+      <p class="sub">
+        New pieces, subscriber-only drops, and first looks before anything reaches the
+        shop. A short note when something beautiful comes off the press, and nothing else.
+      </p>
+    </div>
+    <div>
+      <form id="firstlook-form" method="post" action="#beehiiv-action-placeholder" novalidate>
+        <label for="fl-email" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Email address</label>
+        <input id="fl-email" type="email" name="email" placeholder="your@email.com" autocomplete="email" required>
+        <input type="hidden" name="sent_from_orchid" value="true">
+        <input type="hidden" name="signup_flow_id" value="">
+        <input type="hidden" name="automation_ids" value="">
+        <input type="hidden" name="double_opt" value="false">
+        <input type="hidden" name="auto_login_enabled" value="true">
+        <input type="hidden" name="subscribe_success_message" value="Subscribed!">
+        <input type="hidden" name="utm_source" value="dawnpressco.com">
+        <input type="hidden" name="utm_campaign" value="first-look">
+        <button class="pill" type="submit">Send me the first look</button>
+      </form>
+      <p class="form-note" id="form-note">The list opens with the shop. This page is the preview.</p>
+      <p class="fine">A note or two a season. Unsubscribe anytime.</p>
+    </div>
+  </section>
+
+  <!-- ── Closing ── -->
+  <section class="close">
+    <h2>The sun's up. <em>The shop's open.</em></h2>
+    <div class="cta-row">
+      <a class="pill" href="#etsy-url-placeholder" data-etsy>Visit Dawn Press Co on Etsy</a>
+    </div>
+  </section>
 </main>
-<footer>© 2026 The Dawn Press Co LLC · Columbus, Ohio · <a href="mailto:hello@dawnpressco.com">hello@dawnpressco.com</a></footer>
+
+<footer>
+  <div class="foot-in">
+    <div class="foot-mark">
+      <svg width="24" height="24" viewBox="0 0 32 32" aria-hidden="true">
+        <clipPath id="horizon2"><rect x="0" y="0" width="32" height="21"/></clipPath>
+        <path d="M8 21a8 8 0 0 1 16 0" fill="#D3A84C" clip-path="url(#horizon2)"/>
+        <rect x="4" y="21" width="24" height="1.8" rx="0.9" fill="#F3EAD9"/>
+      </svg>
+      <b>Dawn Press Co</b>
+    </div>
+    <span class="where">Ohio, USA · © 2026 Dawn Press Co</span>
+    <div class="links">
+      <a href="mailto:hello@dawnpressco.com">hello@dawnpressco.com</a>
+      <a href="#etsy-url-placeholder" data-etsy>Etsy shop</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Launch wiring — reads the two constants declared at the top of this file. */
+(function(){
+  var etsyLive = ETSY_URL.charAt(0) !== "#";
+  document.querySelectorAll("[data-etsy]").forEach(function(a){
+    if (etsyLive){ a.href = ETSY_URL; a.target = "_blank"; a.rel = "noopener"; }
+  });
+  var form = document.getElementById("firstlook-form");
+  var note = document.getElementById("form-note");
+  var beehiivLive = BEEHIIV_ACTION.charAt(0) !== "#";
+  if (beehiivLive){ form.action = BEEHIIV_ACTION; }
+  var email = document.getElementById("fl-email");
+  var previewMsg = note.textContent;
+  form.addEventListener("submit", function(e){
+    if (!email.validity.valid){
+      e.preventDefault();
+      note.textContent = "That email doesn't look right yet. Check it and try again.";
+      note.classList.add("show");
+      email.focus();
+      return;
+    }
+    if (!beehiivLive){ e.preventDefault(); note.textContent = previewMsg; note.classList.add("show"); }
+  });
+  email.addEventListener("input", function(){ note.classList.remove("show"); });
+})();
+</script>
 </body>
 </html>
