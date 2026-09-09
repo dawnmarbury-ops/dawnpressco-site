@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Where to Print It · Dawn Press Co</title>
+<meta name="description" content="A plain-language guide to printing your Dawn Press Co download: where to go, what settings to use, and what it costs.">
+<meta property="og:title" content="Where to Print It · Dawn Press Co">
+<meta property="og:description" content="Where to print your download, what settings to use, and what it costs. From Dawn Press Co.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dawnpressco.com/print">
+<meta property="og:site_name" content="Dawn Press Co">
+<link rel="canonical" href="https://dawnpressco.com/print">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23171310'/%3E%3Cpath d='M8 20a8 8 0 0 1 16 0' fill='%23D3A84C'/%3E%3Crect x='6' y='20' width='20' height='2' rx='1' fill='%23F3EAD9'/%3E%3C/svg%3E">
+
+<script>
+/* ════════════════════════════════════════════════════════════════════
+   LAUNCH WIRING — keep this in sync with the same constant in index.html.
+   ETSY_URL → the real Etsy shop address. Starts with "#" = placeholder.
+   ════════════════════════════════════════════════════════════════════ */
+const ETSY_URL = "https://thedawnpressco.etsy.com";
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,500&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+/* ── Tokens (match index.html exactly) ─────────────────────────── */
+:root{
+  --night:#171310;
+  --night-2:#1e1813;
+  --frame:#0f0c09;
+  --cream:#F3EAD9;
+  --cream-dim:#CDBFA6;
+  --gold:#D3A84C;
+  --gold-soft:#E2C27C;
+  --evergreen:#1E4033;
+  --evergreen-2:#183429;
+  --green-ink:#EDF3EA;
+  --green-dim:#AFC9B4;
+  --card:rgba(243,234,217,0.045);
+  --card-line:rgba(211,168,76,0.22);
+  --hairline:rgba(243,234,217,0.12);
+  --serif:"Playfair Display",Georgia,"Times New Roman",serif;
+  --sans:"Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  background:var(--night);
+  color:var(--cream);
+  font-family:var(--sans);
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+.sky{
+  position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(90% 55% at 50% -10%, rgba(211,168,76,0.13) 0%, rgba(211,168,76,0.045) 45%, transparent 70%),
+    radial-gradient(70% 50% at 85% 105%, rgba(30,64,51,0.35) 0%, transparent 65%),
+    var(--night);
+}
+::selection{background:var(--gold);color:var(--night)}
+a{color:var(--gold-soft)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
+img{max-width:100%;height:auto;display:block}
+
+/* ── Shell (identical to index.html) ───────────────────────────── */
+.bar{
+  position:sticky;top:0;z-index:50;
+  background:rgba(23,19,16,0.78);
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--hairline);
+}
+.bar-in{
+  max-width:1120px;margin:0 auto;padding:0.7rem 1.4rem;
+  display:flex;align-items:center;gap:1.2rem;
+}
+.brand{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:var(--cream);min-height:44px}
+.brand svg{display:block}
+.brand b{font-family:var(--serif);font-weight:600;font-size:1.18rem;letter-spacing:0.01em;white-space:nowrap}
+.bar nav{margin-left:auto;display:flex;align-items:center;gap:0.25rem}
+.bar nav a.tab{
+  text-decoration:none;color:var(--cream-dim);font-size:0.92rem;font-weight:700;
+  padding:0.5rem 0.85rem;border-radius:999px;transition:color .15s,background .15s;
+  display:inline-flex;align-items:center;min-height:38px;
+}
+.bar nav a.tab:hover{color:var(--cream);background:rgba(243,234,217,0.07)}
+.pill{
+  display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;
+  background:var(--gold);color:#241a0c;text-decoration:none;
+  font-weight:700;font-size:0.95rem;letter-spacing:0.01em;
+  padding:0.62rem 1.25rem;border-radius:999px;border:0;cursor:pointer;
+  min-height:44px;
+  box-shadow:0 8px 20px -10px rgba(0,0,0,0.6);
+  transition:background .15s,transform .15s,box-shadow .15s;
+}
+.pill:hover{background:var(--gold-soft);transform:translateY(-1px);box-shadow:0 12px 24px -10px rgba(0,0,0,0.65)}
+.pill:active{transform:translateY(0)}
+.ghost{
+  display:inline-flex;align-items:center;justify-content:center;
+  color:var(--cream);text-decoration:none;font-weight:700;font-size:0.95rem;
+  padding:0.62rem 1.25rem;border-radius:999px;min-height:44px;
+  border:1px solid rgba(243,234,217,0.28);
+  transition:border-color .15s,background .15s;
+}
+.ghost:hover{border-color:var(--gold);background:rgba(211,168,76,0.08)}
+
+main{max-width:1120px;margin:0 auto;padding:0 1.4rem}
+section{scroll-margin-top:5rem}
+main section{margin-top:3.2rem;padding-bottom:0.2rem}
+main section:first-child{margin-top:0}
+
+/* ── Page title ─────────────────────────────────────────────────── */
+.page-title{padding:3.2rem 0 0}
+.page-title h1{
+  font-family:var(--serif);font-weight:600;
+  font-size:clamp(2.2rem,4.6vw,3.4rem);
+  line-height:1.1;letter-spacing:-0.01em;text-wrap:balance;
+}
+.page-title .promise{margin-top:1rem;max-width:58ch;color:var(--cream-dim);font-size:1.06rem}
+.page-title .updated{margin-top:1rem;font-size:0.88rem;color:var(--cream-dim)}
+
+/* ── Section headings (match index.html .head) ─────────────────── */
+.head h2{
+  font-family:var(--serif);font-weight:600;font-size:clamp(1.6rem,2.9vw,2.2rem);
+  letter-spacing:-0.01em;text-wrap:balance;
+}
+.head > p{margin-top:0.9rem;max-width:62ch;color:var(--cream-dim)}
+
+/* ── Panels: the one card recipe, reused everywhere ────────────── */
+.panel{
+  background:var(--card);border:1px solid var(--hairline);border-radius:16px;
+  padding:1.6rem 1.8rem;
+}
+.panel + .panel{margin-top:1rem}
+
+/* ── Before You Print: the one gold-accented box (accent = the most
+   important thing on the page) ─────────────────────────────────── */
+.callout{
+  margin-top:1.3rem;
+  background:var(--card);border:1px solid var(--card-line);border-radius:16px;
+  padding:1.8rem 2rem;
+}
+.callout h2{
+  font-family:var(--serif);font-weight:600;font-size:clamp(1.5rem,2.6vw,1.9rem);
+  color:var(--gold-soft);
+}
+.steps{margin-top:1.1rem;padding-left:1.4rem}
+.steps li{margin-top:0.9rem;color:var(--cream);line-height:1.55}
+.steps li::marker{color:var(--gold);font-weight:700}
+.steps li:first-child{margin-top:0}
+.gloss{color:var(--cream-dim);font-size:0.94rem}
+
+/* ── What you have: two cards ────────────────────────────────────── */
+.cards-2{margin-top:1.4rem;display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.info-card{
+  background:var(--card);border:1px solid var(--hairline);border-radius:16px;
+  padding:1.6rem 1.8rem;
+}
+.info-card h3{font-family:var(--serif);font-weight:600;font-size:1.28rem;line-height:1.25}
+.info-card p{margin-top:0.75rem;color:var(--cream-dim);line-height:1.55}
+.info-card p + p{margin-top:0.7rem}
+.info-card ol{margin-top:0.7rem;padding-left:1.3rem;color:var(--cream-dim)}
+.info-card ol li{margin-top:0.4rem}
+.info-card b{color:var(--cream)}
+
+/* ── Where to print: tiered cards with badges ───────────────────── */
+.tier{margin-top:1rem}
+.tier h3{
+  font-family:var(--serif);font-weight:600;font-size:1.24rem;
+  display:flex;align-items:center;gap:0.7rem;flex-wrap:wrap;
+}
+.badge{
+  font-family:var(--sans);font-weight:700;font-size:0.72rem;letter-spacing:0.03em;text-transform:uppercase;
+  color:var(--gold-soft);border:1px solid var(--card-line);border-radius:999px;
+  padding:0.28rem 0.7rem;
+}
+.tier p{margin-top:0.7rem;color:var(--cream-dim);line-height:1.6}
+.tier ul{margin-top:0.7rem;padding-left:1.2rem;color:var(--cream-dim);line-height:1.6}
+.tier ul li{margin-top:0.55rem}
+.tier ul li b{color:var(--cream)}
+.stamp{margin-top:0.5rem;font-size:0.85rem;color:var(--cream-dim);font-style:italic}
+.honest{
+  margin-top:1.3rem;padding:1.1rem 1.3rem;
+  background:var(--card);border:1px solid var(--hairline);border-radius:12px;
+  font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--cream);
+  line-height:1.55;
+}
+
+/* ── Black-owned: honest placeholder, real card recipe reserved ── */
+.shop-card{
+  margin-top:1.2rem;border:1px dashed var(--hairline);border-radius:16px;
+  padding:1.6rem 1.8rem;color:var(--cream-dim);
+}
+.shop-card.placeholder p{font-size:0.95rem;line-height:1.55}
+.shop-card.placeholder b{color:var(--cream)}
+
+/* ── Frames ───────────────────────────────────────────────────── */
+.frame-list{margin-top:1.2rem;padding-left:1.2rem;color:var(--cream-dim);line-height:1.65}
+.frame-list li{margin-top:0.6rem}
+.frame-list b{color:var(--cream)}
+
+/* ── Cost table: scrolls in its own box on narrow screens ───────── */
+.table-wrap{
+  margin-top:1.2rem;overflow-x:auto;-webkit-overflow-scrolling:touch;
+  border:1px solid var(--hairline);border-radius:14px;
+}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:0.92rem}
+thead th{
+  text-align:left;font-family:var(--sans);font-weight:700;color:var(--gold-soft);
+  padding:0.85rem 1rem;border-bottom:1px solid var(--card-line);white-space:nowrap;
+}
+tbody td{padding:0.85rem 1rem;color:var(--cream-dim);border-bottom:1px solid var(--hairline);vertical-align:top}
+tbody tr:last-child td{border-bottom:0}
+tbody td:first-child{color:var(--cream);font-weight:700;white-space:nowrap}
+.table-note{margin-top:0.8rem;font-size:0.88rem;color:var(--cream-dim)}
+
+/* ── Closing help line ────────────────────────────────────────── */
+.help-line{margin-top:0.5rem;color:var(--cream-dim)}
+
+/* ── Footer (identical to index.html, plus one quiet FTC line) ── */
+footer{border-top:1px solid var(--hairline);margin-top:3.6rem}
+.ftc-quiet{
+  max-width:1120px;margin:0 auto;padding:1.6rem 1.4rem 0;
+  font-size:0.82rem;color:var(--cream-dim);
+}
+.foot-in{
+  max-width:1120px;margin:0 auto;padding:1.1rem 1.4rem 3rem;
+  display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;
+}
+.foot-mark{display:flex;align-items:center;gap:0.6rem}
+.foot-mark b{font-family:var(--serif);font-weight:600;font-size:1.05rem}
+.foot-in .where{color:var(--cream-dim);font-size:0.92rem}
+.foot-in .links{margin-left:auto;display:flex;gap:1.4rem;flex-wrap:wrap}
+.foot-in .links a{color:var(--cream-dim);text-decoration:none;font-size:0.92rem;font-weight:700;min-height:44px;display:inline-flex;align-items:center}
+.foot-in .links a:hover{color:var(--gold-soft)}
+
+/* ── Responsive ───────────────────────────────────────────────── */
+@media (max-width:900px){
+  .cards-2{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .bar nav a.tab{display:none}
+  .bar-in{padding:0.6rem 1rem}
+  main{padding:0 1rem}
+  .callout{padding:1.4rem 1.3rem}
+  .panel,.info-card{padding:1.3rem 1.3rem}
+  .foot-in{gap:0.8rem}
+  .foot-in .links{margin-left:0}
+  .ftc-quiet{padding:1.4rem 1rem 0}
+}
+</style>
+</head>
+<body>
+<div class="sky" aria-hidden="true"></div>
+
+<header class="bar">
+  <div class="bar-in">
+    <a class="brand" href="index.html" aria-label="Dawn Press Co, home">
+      <svg class="mark" width="30" height="30" viewBox="0 0 32 32" aria-hidden="true">
+        <clipPath id="horizon"><rect x="0" y="0" width="32" height="21"/></clipPath>
+        <path d="M8 21a8 8 0 0 1 16 0" fill="#D3A84C" clip-path="url(#horizon)"/>
+        <rect x="4" y="21" width="24" height="1.8" rx="0.9" fill="#F3EAD9"/>
+      </svg>
+      <b>Dawn Press Co</b>
+    </a>
+    <nav aria-label="Site">
+      <a class="tab" href="index.html#collection">The collection</a>
+      <a class="tab" href="index.html#maker">The maker</a>
+      <a class="pill" href="#etsy-url-placeholder" data-etsy>Shop on Etsy</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="page-title">
+    <h1>Where to Print It</h1>
+    <p class="promise">A plain guide to turning your download into something you can hang or hold: where to go, what settings to pick, and what it actually costs.</p>
+    <p class="updated">Last updated September 2026</p>
+  </section>
+
+  <section class="callout" aria-labelledby="before-print-h">
+    <h2 id="before-print-h">Before You Print</h2>
+    <ol class="steps">
+      <li><b>Print at 100%, or "Actual Size."</b> Never "Fit to Page." Fit to Page shrinks or stretches your art, and it stops matching your frame.</li>
+      <li><b>Choose matte photo paper or heavy cardstock, not plain paper.</b> <span class="gloss">(Matte is the non-shiny kind. Cardstock is thick, like a greeting card.)</span> Set quality to Best.</li>
+      <li><b>Print the file you downloaded, from a real PDF or photo app, not a browser preview or a screenshot.</b> A browser can print a blurry stand-in instead of your real file. Before you order, check the crop preview so you know what you're getting.</li>
+    </ol>
+  </section>
+
+  <section id="what-you-have" class="head">
+    <h2>What You Have</h2>
+    <div class="cards-2">
+      <article class="info-card">
+        <h3>Wall art (Afrohemian sets)</h3>
+        <p>Your files are PNG images, already sized at 12x16 inches at 300 dpi, a 3:4 shape (taller than it is wide, like a classic postcard stretched tall). They're already print-shop ready. No converting needed.</p>
+        <p><b>No-crop sizes:</b> 6x8, 9x12, 12x16, 18x24, 24x32. Order one of these and nothing gets cut off.</p>
+        <p><b>8x10 or 11x14 frame instead?</b> Those are a slightly different shape, so the print counter will crop a little off the edges. Choose "fill" (not "fit" or "stretch") when you upload, and check the preview before you order.</p>
+      </article>
+      <article class="info-card">
+        <h3>Kits and planners (PDF)</h3>
+        <p>These come as a PDF. FedEx Office, Staples, Office Depot, the UPS Store, and most public libraries will print it exactly as it is. No converting needed.</p>
+        <p><b>Want one page printed at a photo counter instead</b> (Walgreens, CVS, Walmart)? Those only take JPG or PNG. Export that one page first:</p>
+        <ol>
+          <li>Open the PDF page you want.</li>
+          <li>Mac: File then Export, choose JPEG. Windows: Print, choose "Microsoft Print to PDF," then open that in Photos and Save As.</li>
+          <li>Upload the JPG at the photo counter.</li>
+        </ol>
+      </article>
+    </div>
+  </section>
+
+  <section id="where-to-print" class="head">
+    <h2>Where to Print</h2>
+    <p>Three kinds of places take your file, and they take different formats. Here's who takes what.</p>
+
+    <div class="tier">
+      <h3>Same-day counters <span class="badge">Takes PDF</span></h3>
+      <p>FedEx Office, Staples, Office Depot, the UPS Store, and most public libraries. Good for the planner and kit PDFs, and for a big tiled poster page. Call ahead to check hours, sizes, and same-day cutoff times before you go.</p>
+    </div>
+
+    <div class="tier">
+      <h3>Photo counters <span class="badge">Takes PNG or JPG</span></h3>
+      <p>Walgreens, CVS, Walmart. Same-day at most stores, and coupons are common. Your Afrohemian art files upload here as-is. Anything you started as a PDF needs the JPG export step above first.</p>
+    </div>
+
+    <div class="tier">
+      <h3>Mail-order labs <span class="badge">Takes PNG or JPG</span></h3>
+      <p class="stamp">Prices below were read on each lab's own site, September 9, 2026. Prices change, so treat these as a starting point.</p>
+      <ul>
+        <li><b>Nations Photo Lab</b>: 8x10 from $2.98, 11x14 from $6.38, 16x20 from $12.79, on lustre (a soft-shine finish, not glossy, not flat matte) or glossy paper.</li>
+        <li><b>Posterjack</b>: 8x10 $4.00, 11x14 $8.00, 16x20 $16.00, 18x24 $18.00, on satin matte poster paper. A fine-art cotton paper option starts at $10.00 for 8x10.</li>
+        <li><b>Bay Photo Lab</b>: 8x10 from $3.55, 11x14 from $7.69, 16x20 from $24.99, on lustre or glossy paper. A fine-art paper option is also available.</li>
+        <li><b>Printique</b>: fine-art cotton paper prints, several textures. Pricing changes by size, call or check current pricing when you order.</li>
+        <li><b>Mpix</b>: a range of finishes, including a fine-art paper option. Call or check current pricing when you order.</li>
+        <li><b>FinerWorks</b>: the widest choice of fine-art papers of the group. Doesn't take PDF, so convert to JPG or PNG first. Call or check current pricing when you order.</li>
+      </ul>
+    </div>
+
+    <p class="honest">We list these to save you time; we do not control their machines. Order one small test print first. The Afrohemian palettes run deep, and dark prints go muddy on the wrong paper.</p>
+  </section>
+
+  <section id="black-owned" class="head">
+    <h2>Black-Owned Print Shops</h2>
+    <p>We are vetting Black-owned print shops in Columbus and across the country so we can list them first. Know one that prints single posters for individuals? Email hello@dawnpressco.com.</p>
+    <div class="shop-card placeholder">
+      <!-- first verified Black-owned shop goes here: name, city, phone, verified-on date -->
